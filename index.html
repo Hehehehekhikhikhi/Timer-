@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeonFocus - Premium Study Timer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-pattern"></div>
+    
+    <div class="container">
+        <header class="glass-header">
+            <h1 class="logo">NeonFocus</h1>
+            <div class="session-stats">
+                <span class="stat">
+                    <span class="stat-number" id="completedSessions">0</span>
+                    <span class="stat-label">Sessions</span>
+                </span>
+            </div>
+        </header>
+
+        <main class="timer-container">
+            <div class="glass-panel main-panel">
+                <div class="timer-display">
+                    <div class="time-circle">
+                        <svg class="progress-ring" width="280" height="280">
+                            <circle class="progress-ring-bg" cx="140" cy="140" r="120"></circle>
+                            <circle class="progress-ring-fill" cx="140" cy="140" r="120"></circle>
+                        </svg>
+                        <div class="time-text" id="timeDisplay">25:00</div>
+                    </div>
+                </div>
+
+                <div class="timer-controls">
+                    <button class="glass-btn primary-btn" id="startBtn">
+                        <span class="btn-icon">▶</span>
+                        <span class="btn-text">Start Focus</span>
+                    </button>
+                    <button class="glass-btn secondary-btn" id="pauseBtn" style="display: none;">
+                        <span class="btn-icon">⏸</span>
+                        <span class="btn-text">Pause</span>
+                    </button>
+                    <button class="glass-btn tertiary-btn" id="resetBtn">
+                        <span class="btn-icon">↻</span>
+                        <span class="btn-text">Reset</span>
+                    </button>
+                </div>
+
+                <div class="session-type">
+                    <span class="session-label" id="sessionType">Focus Session</span>
+                    <div class="session-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-panel settings-panel">
+                <h3 class="panel-title">Timer Settings</h3>
+                <div class="setting-group">
+                    <label class="setting-label">Focus Time</label>
+                    <div class="time-selector">
+                        <button class="time-btn" data-minutes="15">15m</button>
+                        <button class="time-btn active" data-minutes="25">25m</button>
+                        <button class="time-btn" data-minutes="45">45m</button>
+                        <button class="time-btn" data-minutes="60">60m</button>
+                    </div>
+                </div>
+                <div class="setting-group">
+                    <label class="setting-label">Break Time</label>
+                    <div class="time-selector">
+                        <button class="time-btn break-btn" data-minutes="5">5m</button>
+                        <button class="time-btn break-btn active" data-minutes="15">15m</button>
+                        <button class="time-btn break-btn" data-minutes="30">30m</button>
+                    </div>
+                </div>
+                <div class="setting-group">
+                    <label class="setting-label">Ambient Sound</label>
+                    <div class="sound-controls">
+                        <button class="sound-btn" data-sound="rain">🌧️ Rain</button>
+                        <button class="sound-btn" data-sound="forest">🌲 Forest</button>
+                        <button class="sound-btn" data-sound="cafe">☕ Café</button>
+                        <button class="sound-btn" data-sound="off">🔇 Off</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-panel tasks-panel">
+                <h3 class="panel-title">Today's Tasks</h3>
+                <div class="task-input-group">
+                    <input type="text" class="glass-input" id="taskInput" placeholder="Add a new task...">
+                    <button class="add-task-btn" id="addTaskBtn">+</button>
+                </div>
+                <div class="tasks-list" id="tasksList">
+                    <div class="task-item completed">
+                        <span class="task-checkbox">✓</span>
+                        <span class="task-text">Review JavaScript concepts</span>
+                    </div>
+                    <div class="task-item">
+                        <span class="task-checkbox"></span>
+                        <span class="task-text">Complete project documentation</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
